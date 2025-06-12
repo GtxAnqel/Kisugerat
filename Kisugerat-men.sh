@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-
+figlet Kisugerat | lolcat
 # Renk kodları
 RED='\033[1;31m'
 GREEN='\033[1;32m'
