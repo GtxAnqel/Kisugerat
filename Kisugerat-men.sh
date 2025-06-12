@@ -1,36 +1,47 @@
 #!/data/data/com.termux/files/usr/bin/bash
-figlet Kisugerat | lolcat
-# Başlık ASCII sanatı
-toilet -f big "Kisugerat" | lolcat
 
-# Menü fonksiyonu
+# Renk kodları
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[1;34m'
+MAGENTA='\033[1;35m'
+CYAN='\033[1;36m'
+RESET='\033[0m'
+
+clear
+echo -e "${CYAN}"
+figlet Kisugerat | lolcat
+echo -e "${YELLOW}Hoşgeldin, Gölgenin Efendisi!${RESET}"
+echo -e "${MAGENTA}Bir efsanenin izini sürmeye hazır mısın?${RESET}"
+sleep 1
+
 show_menu() {
   echo ""
-  echo "╔════════════════════════════╗      ╔════════════════════════════╗"
-  echo "║       HAYATI (1-15)        ║      ║     GÖLGELER (16-30)       ║"
-  echo "╠════════════════════════════╣      ╠════════════════════════════╣"
-  echo "║ 1) Doğumu                  ║      ║ 16) Sessiz Fısıltılar      ║"
-  echo "║ 2) Ailesi                  ║      ║ 17) Ruh Emici Kai          ║"
-  echo "║ 3) Dağdaki Yıllar          ║      ║ 18) Teknik: Zihin Sükûneti ║"
-  echo "║ 4) Gölge Gözü Uyanışı      ║      ║ 19) Gölge Gözü Evrimi      ║"
-  echo "║ 5) Usta Ronz ile Tanışma   ║      ║ 20) Element Savaşı         ║"
-  echo "║ 6) Manastır Eğitimi        ║      ║ 21) Teknik: Element Kilidi ║"
-  echo "║ 7) İlk Görev               ║      ║ 22) Ruhlarla Konuşma       ║"
-  echo "║ 8) Yasak Kitap             ║      ║ 23) Gölge Antlaşması       ║"
-  echo "║ 9) Ustanın İhaneti         ║      ║ 24) Ruh Kraliçesi          ║"
-  echo "║10) Kaçış                   ║      ║ 25) Tarikat Lideri         ║"
-  echo "║11) Gölge Gözü Gücü         ║      ║ 26) Gölge Uyanışı          ║"
-  echo "║12) Suikast Görevi          ║      ║ 27) Öğrenciyi Kurtarma     ║"
-  echo "║13) Kara Aynadaki Gerçek    ║      ║ 28) Son Karar              ║"
-  echo "║14) Büyük Savaş             ║      ║ 29) Ruhlar Mahkemesi       ║"
-  echo "║15) Ustanın Ölümü           ║      ║ 30) Gölge Çağı             ║"
-  echo "╚════════════════════════════╝      ╚════════════════════════════╝"
+  echo -e "${BLUE}╔════════════════════════════╗      ╔════════════════════════════╗${RESET}"
+  echo -e "${YELLOW}║       HAYATI (1-15)        ║      ║     GÖLGELER (16-30)       ║${RESET}"
+  echo -e "${BLUE}╠════════════════════════════╣      ╠════════════════════════════╣${RESET}"
+  echo -e "${GREEN}║ 1) Doğumu                  ║      ║ 16) Sessiz Fısıltılar      ║${RESET}"
+  echo -e "${GREEN}║ 2) Ailesi                  ║      ║ 17) Ruh Emici Kai          ║${RESET}"
+  echo -e "${GREEN}║ 3) Dağdaki Yıllar          ║      ║ 18) Teknik: Zihin Sükûneti ║${RESET}"
+  echo -e "${GREEN}║ 4) Gölge Gözü Uyanışı      ║      ║ 19) Gölge Gözü Evrimi      ║${RESET}"
+  echo -e "${GREEN}║ 5) Usta Ronz ile Tanışma   ║      ║ 20) Element Savaşı         ║${RESET}"
+  echo -e "${GREEN}║ 6) Manastır Eğitimi        ║      ║ 21) Teknik: Element Kilidi ║${RESET}"
+  echo -e "${GREEN}║ 7) İlk Görev               ║      ║ 22) Ruhlarla Konuşma       ║${RESET}"
+  echo -e "${GREEN}║ 8) Yasak Kitap             ║      ║ 23) Gölge Antlaşması       ║${RESET}"
+  echo -e "${GREEN}║ 9) Ustanın İhaneti         ║      ║ 24) Ruh Kraliçesi          ║${RESET}"
+  echo -e "${GREEN}║10) Kaçış                   ║      ║ 25) Tarikat Lideri         ║${RESET}"
+  echo -e "${GREEN}║11) Gölge Gözü Gücü         ║      ║ 26) Gölge Uyanışı          ║${RESET}"
+  echo -e "${GREEN}║12) Suikast Görevi          ║      ║ 27) Öğrenciyi Kurtarma     ║${RESET}"
+  echo -e "${GREEN}║13) Kara Aynadaki Gerçek    ║      ║ 28) Son Karar              ║${RESET}"
+  echo -e "${GREEN}║14) Büyük Savaş             ║      ║ 29) Ruhlar Mahkemesi       ║${RESET}"
+  echo -e "${GREEN}║15) Ustanın Ölümü           ║      ║ 30) Gölge Çağı             ║${RESET}"
+  echo -e "${BLUE}╚════════════════════════════╝      ╚════════════════════════════╝${RESET}"
   echo ""
-  echo "m - Menüye dön | 0 - Çık"
+  echo -e "${CYAN}m - Menüye dön | 0 - Çık${RESET}"
   echo ""
 }
 
-# Hikaye gösterme fonksiyonu
 show_story() {
   clear
   toilet -f smblock "Kisugerat" | lolcat
@@ -71,21 +82,36 @@ show_story() {
   echo ""
 }
 
-# Ana döngü
-clear
+yanlis_sayac=0
+
 show_menu
 while true; do
-  read -p "Seçim (1-30 / m / 0): " secim
+  read -p "$(echo -e ${YELLOW}Seçim\ (1-30\ / m / 0):${RESET} )" secim
   if [[ $secim == "0" ]]; then
-    echo "Kisugerat gölgelerle kaybolur..." | lolcat
+    echo -e "${RED}Kisugerat gölgelerle kaybolur...${RESET}" | lolcat
     break
   elif [[ $secim == "m" ]]; then
     clear
     toilet -f big "Kisugerat" | lolcat
     show_menu
+    yanlis_sayac=0
   elif [[ $secim =~ ^[1-9]$|^1[0-9]$|^2[0-9]$|^30$ ]]; then
     show_story $secim
+    yanlis_sayac=0
   else
-    echo "⚠️ Geçersiz seçim." | lolcat
+    yanlis_sayac=$((yanlis_sayac+1))
+    espri=""
+    if [[ $yanlis_sayac -eq 3 ]]; then
+      espri="${YELLOW}Hatalı seçimler gölgeleri huzursuz ediyor...${RESET}"
+    elif [[ $yanlis_sayac -eq 5 ]]; then
+      espri="${MAGENTA}Sanırım Kisugerat'ın gözü karardı!${RESET}"
+    elif [[ $yanlis_sayac -eq 10 ]]; then
+      espri="${RED}10 kez yanlış girdin! Kisugerat sana acıdı ve menüyü başa sardı :)${RESET}"
+      yanlis_sayac=0
+      sleep 2
+      clear
+      show_menu
+    fi
+    echo -e "${RED}⚠️ Geçersiz seçim.${RESET} $espri"
   fi
 done
