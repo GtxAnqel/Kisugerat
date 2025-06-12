@@ -65,7 +65,7 @@ show_story() {
     27) echo "🧒 Öğrenciyi Kurtarma: Karanlığa çekilen genç bir savaşçı, Kisugerat’ın eski halini yansıtıyordu. Onu kurtarmak için gölgelerin içinden geçti. Genç savaşçıya sadece kılıç değil, umut da verdi." ;;
     28) echo "⚖️ Son Karar: Tüm güç, tüm karanlık elindeydi. Ama gökyüzünü yırtan bir fırtına halkı yok edecekti. Kisugerat kılıcını toprağa sapladı ve tüm gücünü feda ederek fırtınayı durdurdu. O an, tüm dünya sessizliğe gömüldü." ;;
     29) echo "👻 Ruhlar Mahkemesi: Ruhların önüne çıkarıldı. İşlediği her karanlık eylem bir bir önüne serildi. Ama Kisugerat sadece susarak gözlerini kapattı. Ruhlar ona ‘Sen zaten cezanı yaşıyorsun’ dedi ve onu serbest bıraktılar." ;;
-    30) echo "🌑 Gölge Çağı: Kisugerat'ın adı artık dilden dile değil, sadece fısıltılarla aktarılıyordu. Gölgelerin efendisi, kralları diz çöktüren, büyücüleri dilsiz bırakan o adam... bir efsane değil, bir uyarıydı. Ne zaman ay ışığı siyaha dönse, insanlar gözlerini kapatır ve onun adını anardı: Kisugerat, Gölge'nin Oğlu." ;;." ;;
+    30) echo "🌑 Gölge Çağı: Kisugerat'ın adı artık dilden dile değil, sadece fısıltılarla aktarılıyordu. Gölgelerin efendisi, kralları diz çöktüren, büyücüleri dilsiz bırakan o adam... bir efsane değil, bir uyarıydı. Ne zaman ay ışığı siyaha dönse, insanlar gözlerini kapatır ve onun adını anardı: Kisugerat, Gölge'nin Oğlu." ;;
     *) echo "⚠️ Geçersiz seçim." ;;
   esac
   echo ""
