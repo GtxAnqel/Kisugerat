@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-
+figlet Kisugerat | lolcat
 # Başlık ASCII sanatı
 toilet -f big "Kisugerat" | lolcat
 
